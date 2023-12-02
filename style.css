@@ -1,0 +1,180 @@
+:root {
+  --clr-light: #e8e8e8;
+  --clr-dark: #212121;
+
+  --box-Shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  --box-Shadow-Active: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+}
+.darkmode {
+  --clr-light: #e8e8e8;
+  --clr-dark: #313030;
+
+  --box-Shadow: 6px 6px 12px rgb(25, 25, 25), -6px -6px 12px rgb(60, 60, 60);
+  --box-Shadow-Active: inset 4px 4px 12px rgb(25, 25, 25),
+    inset -4px -4px 12px rgb(60, 60, 60);
+
+  --foreground: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  color: var(--foreground);
+  transition: all 0.5s;
+}
+
+.calContainer {
+  width: 500px;
+  height: 700px;
+  background-color: var(--background);
+  box-shadow: var(--box-Shadow-Active);
+  border-radius: 15px;
+}
+
+/* top half of calculator */
+.top {
+  height: 25%;
+  color: var(--foreground);
+}
+/* Bottom half of calculator */
+.bottom {
+  display: flex;
+  height: 75%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+table {
+  height: 100%;
+  text-align: center;
+}
+#display {
+  height: 100%;
+  width: 100%;
+  color: var(--foreground);
+  background-color: var(--background);
+  box-shadow: var(--box-Shadow-Active);
+  border: none;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  text-align: right;
+  font-size: 3rem;
+  padding-right: 0.5em;
+  opacity: 0.5;
+}
+#ansDisplay {
+  font-size: 2rem;
+  position: relative;
+  width: 100%;
+  height: 20%;
+  text-align: right;
+  background-color: transparent;
+  right: 5%;
+  top: -25%;
+  border: none;
+  z-index: 5px;
+  color: var(--foreground);
+}
+
+.button {
+  width: 85%;
+  height: 70%;
+  padding: 15px;
+  font-size: 2rem;
+  background-color: var(--background);
+  border: none;
+  border-radius: 15px;
+  transition: 0.2s;
+  color: var(--foreground);
+}
+
+.button:active {
+  box-shadow: var(--box-Shadow-Active);
+}
+
+.dark-mode-toggle {
+  position: sticky;
+  margin-bottom: 2em;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--foreground);
+  border: 2px solid var(--background);
+  background-color: var(--background);
+  box-shadow: var(--box-Shadow-Active);
+  transition: all 0.9s;
+  text-align: center;
+}
+.dark-mode-toggle:hover {
+  box-shadow: var(--box-Shadow-Active);
+}
+
+.operationActive {
+  box-shadow: var(--box-Shadow-Active);
+  color: green;
+}
+.operation:hover {
+  box-shadow: var(--box-Shadow-Active);
+  color: green;
+}
+.Del-btn:hover {
+  color: red;
+  box-shadow: var(--box-Shadow-Active);
+}
+.Equal-btn:hover {
+  color: orange;
+  box-shadow: var(--box-Shadow-Active);
+}
+hr {
+  height: 2px;
+  box-shadow: var(--box-Shadow-Active);
+  border-radius: 10px;
+}
+
+/* For phone screen size */
+@media screen and (max-width: 600px) {
+  .calContainer {
+    width: 300px;
+    height: 500px;
+  }
+
+  .button {
+    width: 75%;
+    height: 70%;
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: var(--background);
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+  /* .dark-mode-toggle {
+    position: absolute;
+    top: 10%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--foreground);
+    border: 2px solid var(--background);
+    background-color: var(--background);
+    transition: 0.4s;
+    text-align: center;
+  } */
+}
