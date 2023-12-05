@@ -2,7 +2,7 @@
 <img src="https://github.com/Tobyrams/SimplyCalculate/blob/main/Image/SimplyCalculateIcon.png" alt="SimplyCalculate Logo" width="75"/>
 
 
-This is a simple calculator program designed to perform basic arithmetic operations. 
+This is a calculator program designed to perform basic arithmetic operations. 
 It provides a user-friendly interface for performing addition, subtraction, multiplication, and division.
 
 ## Features
